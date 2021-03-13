@@ -23,9 +23,11 @@ export default class Cursos extends React.Component {
 
     getCursos =  () =>{
 
-        fetch("http://localhost:8080/api/cursos",{mode: 'no-cors'})
+        fetch("http://localhost:8080/api/cursos")
         .then(response => response.json())
-        .then(jsonData => console.log(jsonData))
+        .then(jsonData => this.setState({
+                cursos: jsonData
+            }))
         
        /*  axios.get(`http://localhost:8080/api/cursos`)
         .then(res => {
